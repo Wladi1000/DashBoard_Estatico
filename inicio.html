@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Light</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="header__logo">Logo</a>
+        <ul class="header__nav">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#" class="inactive">About</a></li>
+            <li><a href="#" class="inactive">Work</a></li>
+            <li><a href="#" class="inactive">Contact</a></li>
+        </ul>
+    </header>
+    <section class="main">
+        <img class="main--stars" src="recursos/images/stars.png" id="stars">
+        <img class="main--moon" src="recursos/images/moon.png" id="moon">
+        <img class="main--mountainsB" src="recursos/images/mountains_behind.png" id="mountains_behind">
+        <h2 id='mainText'>Moon Light</h2>
+        <a href="#" class="btn" id="btn">Explore</a>
+        <img class="main--mountainsF" src="recursos/images/mountains_front.png" id="mountains_front">
+    </section>
+    <section class="description">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio vitae velit placeat asperiores itaque inventore delectus modi debitis reprehenderit. Accusantium dolor facilis eos, voluptates commodi molestiae labore mollitia delectus laboriosam?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum assumenda facere fuga excepturi eos, voluptatum aut autem quis incidunt sequi unde maiores nemo tempore iure minus laboriosam perferendis natus velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero quia nemo delectus nulla nostrum, beatae qui minima deserunt aspernatur veniam quam cumque ipsa quis inventore. Architecto maxime iure amet nesciunt? <br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis rerum sapiente maiores, debitis quam. Ducimus vero, nobis quo possimus excepturi sed, nostrum labore iusto voluptatem, beatae magni assumenda! Aspernatur. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio tempora tempore id quod iste qui soluta laudantium recusandae excepturi ut vero consequuntur, officia, atque quo facilis reprehenderit nisi pariatur ratione? <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe corporis magni est doloremque aliquid quia, rem accusamus fugiat possimus, veniam ab dolor labore iusto facilis odit commodi, architecto illo laboriosam. <br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed enim blanditiis nobis ex rem aspernatur, temporibus aperiam, nihil autem earum eius eveniet magnam quibusdam officia impedit totam cupiditate vel excepturi.  </p>
+    </section>
+
+    <script>
+        let stars =document.getElementById('stars')
+        let moon =document.getElementById('moon')
+        let mountainsB =document.getElementById('mountains_behind')
+        let text = document.getElementById('mainText')
+        let btn = document.getElementById('btn')
+        let mountainsF =document.getElementById('mountains_front') 
+        let header =document.querySelector('header')
+        
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value*0.25 + 'px'
+            moon.style.top = value*0.55 + 'px'
+            mountainsB.style.top = value*0.2 + 'px'
+            mountainsF.style.top = value*0 + 'px'
+            text.style.marginRight = value*2.5 + 'px'
+            text.style.marginTop = value*1.5 + 'px'
+            btn.style.marginTop = value*1.5 + 'px'
+            header.style.top = value*0.55 + 'px'
+        })
+    </script>
+
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
